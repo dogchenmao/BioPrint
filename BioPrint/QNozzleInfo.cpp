@@ -156,7 +156,8 @@ void QNozzleInfo::slotUpdataNozzleInfo(QByteArray info)
 			break;
 		}
 		oneNozzleBuff.STOREROOM = 1;
-		oneNozzleBuff.ID
+		oneNozzleBuff.ID;
+		//git test
 	}
 	else
 	{
