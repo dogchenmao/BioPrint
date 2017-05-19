@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{ee0dc413-746d-4fa2-92d5-498b92d1a069}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{05957c92-969d-479d-bb69-064091c2d076}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="ModelObject">
+      <UniqueIdentifier>{1e53f2b7-43a6-4713-b125-fede75ce1575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ModelObject\STLObject">
+      <UniqueIdentifier>{b84e9b9c-8394-433f-89f6-78e7b3d13b33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ModelObject\GCodeObject">
+      <UniqueIdentifier>{844a5b45-a9e9-476d-8ebd-744468670500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ModelView">
+      <UniqueIdentifier>{886938f3-4cbb-47da-a641-1071e8ecb64d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="SelfWidget">
+      <UniqueIdentifier>{a76b1a93-cb43-422e-8479-11e112a9c0b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ini">
+      <UniqueIdentifier>{87f086c2-57f1-41ed-ae47-3e8f49dc5000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Communication">
+      <UniqueIdentifier>{f7316ed4-e1af-4680-a9c7-bb68b294067d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BioPrint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_BioPrint.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_BioPrint.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_BioPrint.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Point5D.cpp">
+      <Filter>ModelObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Q2DLines.cpp">
+      <Filter>ModelObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QSTLSolid.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QSTLSolid.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QGCodeSolid.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QGCodeSolid.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QModel.cpp">
+      <Filter>ModelObject</Filter>
+    </ClCompile>
+    <ClCompile Include="QGCodeParser.cpp">
+      <Filter>ModelObject\GCodeObject</Filter>
+    </ClCompile>
+    <ClCompile Include="QGCodeSolid.cpp">
+      <Filter>ModelObject\GCodeObject</Filter>
+    </ClCompile>
+    <ClCompile Include="QSTLFace.cpp">
+      <Filter>ModelObject\STLObject</Filter>
+    </ClCompile>
+    <ClCompile Include="QSTLPoint.cpp">
+      <Filter>ModelObject\STLObject</Filter>
+    </ClCompile>
+    <ClCompile Include="QSTLSolid.cpp">
+      <Filter>ModelObject\STLObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QModelView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QModelView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QModelView.cpp">
+      <Filter>ModelView</Filter>
+    </ClCompile>
+    <ClCompile Include="TVector3D.cpp">
+      <Filter>ModelView</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.cpp">
+      <Filter>ModelView</Filter>
+    </ClCompile>
+    <ClCompile Include="GeomBase.cpp">
+      <Filter>ModelView</Filter>
+    </ClCompile>
+    <ClCompile Include="TCamera.cpp">
+      <Filter>ModelView</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QMachineWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QMachineWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QMachineWidget.cpp">
+      <Filter>SelfWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QMachinePTWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QMachinePTWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QMachinePTWidget.cpp">
+      <Filter>SelfWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="PrinterMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPrinterApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QSystemConfig.cpp">
+      <Filter>Ini</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QNozzleInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QNozzleInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QNozzleInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QMySerialPort.cpp">
+      <Filter>Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QMySerialPort.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QMySerialPort.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="BioPrint.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="BioPrint.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Point5D.h">
+      <Filter>ModelObject</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QGCodeSolid.h">
+      <Filter>ModelObject\GCodeObject</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QSTLFace.h">
+      <Filter>ModelObject\STLObject</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QSTLPoint.h">
+      <Filter>ModelObject\STLObject</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QSTLSolid.h">
+      <Filter>ModelObject\STLObject</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QModelView.h">
+      <Filter>ModelView</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_BioPrint.h">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeneratedFiles\ui_QModelView.h">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Q2DLines.h">
+      <Filter>ModelObject</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QModel.h">
+      <Filter>ModelObject</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QGCodeParser.h">
+      <Filter>ModelObject\GCodeObject</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TVector3D.h">
+      <Filter>ModelView</Filter>
+    </CustomBuild>
+    <CustomBuild Include="utility.h">
+      <Filter>ModelView</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GeomBase.h">
+      <Filter>ModelView</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TCamera.h">
+      <Filter>ModelView</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMachineWidget.h">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMachinePTWidget.ui">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMachineWidget.ui">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMachinePTWidget.h">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="BioPrint.h">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Functions.h">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GlobleDefine.h">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QModelView.ui">
+      <Filter>ModelView</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QNozzleInfo.h">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMySerialPort.h">
+      <Filter>Communication</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_QMachineWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_QMachinePTWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrinterMachine.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyPrinterApp.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QSystemConfig.h">
+      <Filter>Ini</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
