@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/BioPrint">
+    <file>res/HIGH1.png</file>
+    <file>res/LOW1.png</file>
+    <file>res/PTZ_1.png</file>
+    <file>res/PTZ.png</file>
+    <file>res/LOW.png</file>
+    <file>res/HIGH.png</file>
+    <file>res/PTZ_XS.png</file>
+  </qresource>
+</RCC>

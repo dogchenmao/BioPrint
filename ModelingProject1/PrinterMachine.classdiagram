@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="eb745283-da68-4f3f-96b9-8b61e2afddfd" name="PrinterMachine" linkedPackageId="39dff1d6-5585-444f-9198-8ccd1b1f8a99" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="08799208-3a3c-4ec9-88cd-4ce1f3cef581" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="13d2cf99-5aba-4ff4-a9d8-a2d842f23e50" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="4ea1335e-04c6-42c2-ac9c-f8449a3cf41f">
+          <propertyInstance Id="62703f7e-7c45-4d49-ab0d-480a8e54e860" name="BaseName">
+            <elementDefinition Id="4acd4aa0-acc7-42f3-8540-ddf4aa7d7266" />
+          </propertyInstance>
+          <elementDefinition Id="02d0dee3-db3b-4f9e-93e2-17812abe0089" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="9db5ea4f-da91-48b3-860c-8700027d3275">
+          <propertyInstance Id="79f0c2a2-5307-4482-ae28-13c5b9ef5c53" name="ClrAttributes">
+            <elementDefinition Id="a0a15763-62c6-46ef-8398-1825eea61ddd" />
+          </propertyInstance>
+          <elementDefinition Id="21dda4b3-e79b-4551-891e-e3045c4789e2" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="df670669-0903-4cdb-8b2d-669eae0a708b">
+          <propertyInstance Id="a1b9b36f-c80a-4ce1-a014-79d9aeb90810" name="Usings">
+            <elementDefinition Id="a93da7a5-6896-4a8a-8c55-e11eff99416d" />
+          </propertyInstance>
+          <elementDefinition Id="a6f640ea-eb17-4cfe-b65a-a809b2a791b5" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="ad5d38bf-92a6-4947-8acd-6c1e27a0c3e5" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="849660ea-a227-4e96-abcd-c1ba7d298d2d" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="98d1df7f-71b0-423a-aa5b-838efa732ae2">
+          <propertyInstance Id="bbb4e724-7b77-4f7f-b08e-f117e41cc54e" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="fabe28d2-380c-4909-8703-62e662527c55" />
+          </propertyInstance>
+          <elementDefinition Id="65c86ae5-a091-45b4-a999-6a814fa06f00" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="b584cddc-6557-4e0e-828d-b9de44c98ef4">
+          <propertyInstance Id="e2f30452-adce-465f-8dd7-659815215fcd" name="TemplateFilePath" value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="f44bf681-0a1c-4bff-8463-c90283513ec7" />
+          </propertyInstance>
+          <elementDefinition Id="65ac293d-f935-4ac5-bfab-b72a2d52503e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="14fb7a90-1f67-4707-b997-0181f8f8c9d4">
+          <propertyInstance Id="243d2cd3-4b2c-4e32-804b-7a70ff5c60de" name="ProjectPath" value="ClassTemplate=..\ModelingProject1Lib\ModelingProject1Lib.csproj|EnumTemplate=..\ModelingProject1Lib\ModelingProject1Lib.csproj|InterfaceTemplate=..\ModelingProject1Lib\ModelingProject1Lib.csproj|StructTemplate=..\ModelingProject1Lib\ModelingProject1Lib.csproj">
+            <elementDefinition Id="b9c76da3-29d4-46a8-aeea-7d05e269183e" />
+          </propertyInstance>
+          <elementDefinition Id="7f838923-ed9a-4f02-b25b-9d8ac5ce571e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="1dae7753-d3d1-4e9c-8703-1430e734d640">
+          <propertyInstance Id="09b0b686-ca92-4ef3-b0b4-2a1f2138e780" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="807d4f65-8b73-481b-bb5b-193e301750e7" />
+          </propertyInstance>
+          <elementDefinition Id="23bce1b4-2882-40f4-99ae-19b0baf8d520" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="8176cd25-90b1-4ee4-b652-a8a96204b923">
+          <propertyInstance Id="2100267b-55f8-470b-b6c0-b59805e71398" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="c0d2070a-35e9-484f-97d5-c7b6c17aed02" />
+          </propertyInstance>
+          <elementDefinition Id="75829d79-6219-4799-a474-0883485a5c60" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="09efdebb-9a47-40d5-a8e2-35ffec0a7647">
+          <propertyInstance Id="638a584d-b323-492b-b68f-049cd61b0019" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="036848d3-9827-41fb-89d8-e5c54fc018d1" />
+          </propertyInstance>
+          <elementDefinition Id="1207fca0-8a85-49c4-ae21-7919f36c440e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="e5b95944-06f7-45e7-a68f-69276b63fff6">
+          <propertyInstance Id="52c462f7-97ac-4d9d-ad5c-19766b9a285b" name="Parameters">
+            <elementDefinition Id="ef7c6abe-5735-466f-8bf7-cc8413a5cd10" />
+          </propertyInstance>
+          <elementDefinition Id="3172a069-c1b9-4aa6-8620-346a15b77363" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="40e4b485-b8be-4d58-9ec8-03c31099a989">
+      <profileInstance Id="20198c9c-679d-46c0-8d38-49589513104d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="76288883-f2c8-4953-8554-9622d55416ac">
+      <profileInstance Id="d573c086-7aa6-4dd9-81ce-62bacab105ad" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="45ff87ff-3845-459d-85bf-2623cee9d28e">
+      <profileInstance Id="6548895f-d119-46b7-8660-4a0ed53615de" name="CSharpProfile">
+        <elementDefinition Id="cbcf0c2e-ff39-4771-b941-789b88ed0a20" />
+      </profileInstance>
+      <elementDefinition Id="e6e54df1-3ff8-47af-a43f-a38ae5dc41a9" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="07e400c0-fabe-430a-b655-fbcbe284cbd3">
+      <profileInstance Id="60f46a82-1e47-432e-9a97-447e2aae69b9" name="TextTemplateBindings">
+        <elementDefinition Id="493d0e25-5309-4c42-bc78-78524bcc42b3" />
+      </profileInstance>
+      <elementDefinition Id="00206543-49fc-4145-b037-059f4ac1f461" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7572dc44-65dd-4484-b18d-e3c962191507" name="Machine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b3b00738-ac96-4b4b-93d3-9d219beda997" />
+        <ownedAttributesInternal>
+          <property Id="e666bb35-2765-4991-a0b3-99e0ebc9db1a" name="m_MachinePos" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b4f92641-eda4-4620-a1c7-bdd4bd8115b4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="60006372-b03a-4536-9e60-d878f0677b64" LastKnownName="Point5D" />
+            </type_NamedElement>
+          </property>
+          <property Id="009a8741-66ee-4e3e-ad29-76bb61c4d6a8" name="m_MachineState" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0f9b01c3-a254-4f41-9f0e-98519c1ed5c9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7450087c-fd66-4735-84af-d76b1e5d54a8" LastKnownName="MachineState" />
+            </type_NamedElement>
+          </property>
+          <property Id="077e172c-39d7-4f85-82c6-6599dd386e40" name="m_NozzleTemp" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a278594d-8408-4cd6-9109-4d523c44f049" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="49779192-3d57-4b62-90af-c4b194a767d4" LastKnownName="QVector &lt;float&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="3e9d6314-4694-4b83-bc22-1e8a65c865cc" name="m_PlatformTemp" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ad152746-b91a-4874-a3bc-b9737ce3071c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5835e319-ba5e-4b59-916f-fc3d0bc8f393" LastKnownName="float" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="28457f10-91ac-406d-b6d9-43a4c8ce7c96" name="SetMachineState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="904ce9f2-bc54-4dbb-8db8-bf9ca7a9d1ec" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7cebeb17-c07c-46b4-9b09-7a8f9e84da99" name="MachineState state" direction="In" isUnique="false">
+                  <elementDefinition Id="4c9d4fb4-2596-4f6d-90fb-18b594accf27" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ed159372-2f98-45f6-ba38-d4e8da8c1186" direction="Return">
+                  <elementDefinition Id="c1ad3b7f-3408-4855-8ede-fd8c45292638" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b9e00f37-5f69-4e9f-bdcb-90082c6320c8" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="aebf086c-52c6-4e5d-a6f4-907f1bb26a31" name="GetMachineState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="efd8705a-3ece-4950-8ffd-67c8ebd14340" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4c6f28e0-da1b-4992-82f4-851084f9d9b0" direction="Return" isUnique="false">
+                  <elementDefinition Id="d944f7b5-136a-42e9-aedf-ec14bf4b5f6c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="7450087c-fd66-4735-84af-d76b1e5d54a8" LastKnownName="MachineState" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f88c67b5-940c-4816-be2e-61ad6c740b0d" name="SetMachinePos" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="62b7face-635e-4beb-91ac-77c96ea09ba1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a6291ec5-522c-4717-90a5-c77994124037" name="CPoint5D &amp; p" direction="In" isUnique="false">
+                  <elementDefinition Id="9cd7d7a8-30ed-465d-a880-2a0f3b2a8833" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="beb8c664-0b7a-490d-9179-9383d2fa4086" direction="Return" isUnique="false">
+                  <elementDefinition Id="5d2380fd-859b-4573-8fa1-9aa1ec6f3739" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="144b6c2a-159f-4d67-8730-101611a43c41" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="60006372-b03a-4536-9e60-d878f0677b64" name="Point5D" isAbstract="false" isLeaf="false" cachedFullName="Point5D">
+        <elementDefinition Id="605965f7-7876-4a87-9cab-998df72baaa4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7450087c-fd66-4735-84af-d76b1e5d54a8" name="MachineState" isAbstract="false" isLeaf="false" cachedFullName="MachineState">
+        <elementDefinition Id="30583512-3e6d-42e8-b408-83e815630dfd" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="49779192-3d57-4b62-90af-c4b194a767d4" name="QVector &lt;float&gt;" isAbstract="false" isLeaf="false" cachedFullName="QVector &lt;float&gt;">
+        <elementDefinition Id="41d621e6-49f4-4155-a1e0-387e191ba2e6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5835e319-ba5e-4b59-916f-fc3d0bc8f393" name="float" isAbstract="false" isLeaf="false" cachedFullName="float">
+        <elementDefinition Id="534d8bdb-88bf-4ef9-8996-533d7768d45a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="144b6c2a-159f-4d67-8730-101611a43c41" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="917c15c4-be4d-4404-bc20-064de72098d1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b9e00f37-5f69-4e9f-bdcb-90082c6320c8" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="917c15c4-be4d-4404-bc20-064de72098d1" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="39dff1d6-5585-444f-9198-8ccd1b1f8a99" name="ModelingProject1">
+    <elementDefinition Id="256c4c55-41db-4a76-bdb1-0bb658d63716" />
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="28c095b5-1109-49c5-b85a-12320c534e86" name="UMLClassDiagram1" linkedPackageId="fd7a6ebe-dcc5-4ae2-abd1-2cb43487b32c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="042dab8e-3550-419c-af0d-cab00f942bbf">
+      <profileInstance Id="23828a24-6549-413b-be95-8f599cc0ca90" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3e2568c7-e10f-415c-aaf2-7c6191f69a4a">
+      <profileInstance Id="aa9c4b4b-cb11-4b69-a4e5-11d5e0103403" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8dac5da6-0224-4d80-bd47-18928627f3f6" name="Class1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="16b88bef-c4eb-47c8-9999-5c71b47e5fe6" />
+        <ownedAttributesInternal>
+          <property Id="4c6174f6-34ca-43ce-8db0-cbe8e79481a5" name="m_MachinePos" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ec162dda-3c9e-44d8-adcf-672ade46d45a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="aee27da3-2095-4673-b3d5-ee804a1fa593" LastKnownName="Point5D" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="aee27da3-2095-4673-b3d5-ee804a1fa593" name="Point5D" isAbstract="false" isLeaf="false" cachedFullName="Point5D">
+        <elementDefinition Id="605965f7-7876-4a87-9cab-998df72baaa4" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="fd7a6ebe-dcc5-4ae2-abd1-2cb43487b32c" name="ModelingProject1">
+    <elementDefinition Id="256c4c55-41db-4a76-bdb1-0bb658d63716" />
+  </package>
+</logicalClassDesignerModel>

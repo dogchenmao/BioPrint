@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PrinterMachine">
+  <logicalClassDesignerModelMoniker Id="eb745283-da68-4f3f-96b9-8b61e2afddfd" />
+  <nestedChildShapes>
+    <classShape Id="920b3b4e-fa50-487b-946c-7ad0bc578d86" absoluteBounds="3.125, 1.75, 3.375, 2.1910807291666665" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="7572dc44-65dd-4484-b18d-e3c962191507" LastKnownName="Machine" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="020c7693-aedb-4702-b5cf-cd4c138fd414" absoluteBounds="3.14, 2.14, 3.3449999999999998, 0.93400065104166663" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="e6dff888-4cfc-47d1-9c71-fe9d709dec6c" absoluteBounds="3.14, 3.0840006510416664, 3.3449999999999998, 0.757080078125" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>
