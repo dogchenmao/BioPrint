@@ -256,11 +256,11 @@
     <CustomBuild Include="QModelView.ui">
       <Filter>ModelView</Filter>
     </CustomBuild>
-    <CustomBuild Include="QNozzleInfo.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="QMySerialPort.h">
       <Filter>Communication</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QNozzleInfo.h">
+      <Filter>Source Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

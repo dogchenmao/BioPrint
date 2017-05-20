@@ -2,7 +2,8 @@
 #include <QThread>
 #include "GlobleDefine.h"
 #include <QMap>
-#include <Qlist>
+#include <QVector>
+#include <QList>
 #include <QDebug>
 //喷头信息结构体
 struct OneNozzle
@@ -24,6 +25,7 @@ public:
 	~QNozzleInfo();
 private:
 	QMap <int, OneNozzle> NozzleStore;
+	QMap <int, OneNozzle> PreNozzleStore;
 public slots:
 	void slotUpdataNozzleInfo(QByteArray info);
 protected:
@@ -33,6 +35,8 @@ protected:
 	RetNozzle GetUsingNzoole(OneNozzle);
 	RetNozzle GetOneNozzleTemp(int id, float temp);
 	RetNozzle GetOneNozzleTemp(QString guid, float temp);
+	
+	bool IsExist(NozzleStoreRoom);
 
 	RetNozzle AddOneNozzle(int id, OneNozzle nozzle);//返回ID
 
