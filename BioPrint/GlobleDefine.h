@@ -28,6 +28,16 @@ enum LevelTestMode
     ZCheck,
 };
 
+// 喷头库编号枚举
+enum NozzleStoreRoom
+{
+	NozzleStoreRoomH = 0,
+	NozzleStoreRoomA = 1,
+	NozzleStoreRoomB = 2,
+	NozzleStoreRoomC = 3,
+	NozzleStoreRoomD = 4,
+};
+
 // 喷头类型
 enum NozzleType
 {

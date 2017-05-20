@@ -33,7 +33,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <IncludePath>E:\regenovo\rep\Bio-Architect_WS_ByChenMao\BioPrint\BioPrint\I_3DVIEW;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\regenovo\rep\Bio-Architect_WS_ByChenMao\BioPrint\BioPrint\I_3DVIEW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\chenmao\Desktop\Bio-Architect_WS_ByChenMao\BioPrint\I_3DVIEW;$(LibraryPath)</LibraryPath>
     <LibraryWPath>E:\regenovo\rep\Bio-Architect_WS_ByChenMao\BioPrint\BioPrint\I_3DVIEW;$(LibraryWPath)</LibraryWPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
