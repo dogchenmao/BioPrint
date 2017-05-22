@@ -12,13 +12,14 @@ BioPrint::BioPrint(QWidget *parent)
 
 	m_QNozzleInfo = new QNozzleInfo(this);
 	QObject::connect(m_QMySerialPort, SIGNAL(signalUpdataNozzleInfo(QByteArray)), m_QNozzleInfo, SLOT(slotUpdataNozzleInfo(QByteArray)));
-
-
+	QObject::connect(m_QMySerialPort, SIGNAL(signalUpdataNozzleTemp(QByteArray)), m_QNozzleInfo, SLOT(slotUpdataNozzleTemp(QByteArray)));
 
 	//InitWidget();
 	m_QMachinePTWidget = new QMachinePTWidget(this);
 	ui.LeftLayout_D_U->addWidget(m_QMachinePTWidget);
 	m_QMachinePTWidget->show();
+
+	QObject::connect(m_QNozzleInfo, SIGNAL(signalNozzleStoreToWidget(QMap <NozzleStoreRoom, OneNozzleStore>)), m_QMachinePTWidget, SLOT(updataNozzle(QMap <NozzleStoreRoom, OneNozzleStore>)));
 
 	m_QMachineWidget = new QMachineWidget;
 	ui.LeftLayout_U->addWidget(m_QMachineWidget);

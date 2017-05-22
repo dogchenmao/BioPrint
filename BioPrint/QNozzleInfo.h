@@ -5,15 +5,18 @@
 #include <QVector>
 #include <QList>
 #include <QDebug>
-//喷头信息结构体
-struct OneNozzle
+#include <QMutex>
+
+//单个喷头库结构体
+struct OneNozzleStore
 {
-	int	ID;
-	QString	GUID;
+	bool	ISEXIST;
 	NozzleType	TYPE;
 	int	STOREROOM;
 	bool	USING;
 	float	TEMP;
+	bool	ISCONTROLTEMP;
+	bool	ISCALIBRATED;
 };
 
 class QNozzleInfo : public QThread
@@ -24,29 +27,31 @@ public:
 	QNozzleInfo(QObject *parent);
 	~QNozzleInfo();
 private:
-	QMap <int, OneNozzle> NozzleStore;
-	QMap <int, OneNozzle> PreNozzleStore;
+	QMap<NozzleStoreRoom,OneNozzleStore> m_NozzleStore;
 public slots:
 	void slotUpdataNozzleInfo(QByteArray info);
+	void slotUpdataNozzleTemp(QByteArray info);
+	
 protected:
 
 	RetNozzle Init(void);
-	RetNozzle GetAllNozzleID(QList<int> listNozzleID);
-	RetNozzle GetUsingNzoole(OneNozzle);
-	RetNozzle GetOneNozzleTemp(int id, float temp);
-	RetNozzle GetOneNozzleTemp(QString guid, float temp);
-	
-	bool IsExist(NozzleStoreRoom);
+	//RetNozzle GetAllNozzleID(QList<int> listNozzleID);
+	//RetNozzle GetUsingNzoole(OneNozzle);
+	//RetNozzle GetOneNozzleTemp(int id, float temp);
+	//RetNozzle GetOneNozzleTemp(QString guid, float temp);
+	//
+	//bool IsExist(NozzleStoreRoom);
 
-	RetNozzle AddOneNozzle(int id, OneNozzle nozzle);//返回ID
+	//RetNozzle AddOneNozzle(int id, OneNozzle nozzle);//返回ID
 
-	RetNozzle RemoveOneNozzle(QString guid);
-	RetNozzle RemoveOneNozzle(int id);
+	//RetNozzle RemoveOneNozzle(QString guid);
+	//RetNozzle RemoveOneNozzle(int id);
 
-	RetNozzle ChangeUsingNozzle(int id);
+	//RetNozzle ChangeUsingNozzle(int id);
 	//RetNozzle ChangeUsingNozzle(QString guid);
 
 	//RetNozzle NozzleSetTemp(int id);
 	//RetNozzle NozzleSetTemp(QString guid);
-
+signals:
+	void signalNozzleStoreToWidget(QMap<NozzleStoreRoom, OneNozzleStore>);
 };

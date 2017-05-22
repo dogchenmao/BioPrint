@@ -36,6 +36,7 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *verticalSpacer;
     QSpacerItem *verticalSpacer_2;
+    QButtonGroup *buttonGroup;
 
     void setupUi(QWidget *QMachinePTWidget)
     {
@@ -57,6 +58,9 @@ public:
         gridLayout->addItem(horizontalSpacer, 1, 0, 1, 1);
 
         pushButton_2 = new QPushButton(QMachinePTWidget);
+        buttonGroup = new QButtonGroup(QMachinePTWidget);
+        buttonGroup->setObjectName(QStringLiteral("buttonGroup"));
+        buttonGroup->addButton(pushButton_2);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy1.setHorizontalStretch(0);
@@ -75,6 +79,7 @@ public:
         gridLayout->addItem(horizontalSpacer_4, 1, 4, 1, 1);
 
         pushButton_3 = new QPushButton(QMachinePTWidget);
+        buttonGroup->addButton(pushButton_3);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         sizePolicy1.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
         pushButton_3->setSizePolicy(sizePolicy1);
@@ -82,6 +87,7 @@ public:
         gridLayout->addWidget(pushButton_3, 1, 5, 1, 1);
 
         pushButton = new QPushButton(QMachinePTWidget);
+        buttonGroup->addButton(pushButton);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy1);
@@ -93,6 +99,7 @@ public:
         gridLayout->addItem(horizontalSpacer_5, 1, 6, 1, 1);
 
         pushButton_4 = new QPushButton(QMachinePTWidget);
+        buttonGroup->addButton(pushButton_4);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         sizePolicy1.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
         pushButton_4->setSizePolicy(sizePolicy1);

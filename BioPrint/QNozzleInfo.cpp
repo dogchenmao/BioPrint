@@ -1,8 +1,11 @@
 #include "QNozzleInfo.h"
 
+QMutex nmutex;
+
 QNozzleInfo::QNozzleInfo(QObject *parent)
 	: QThread(parent)
 {
+	Init();
 }
 
 QNozzleInfo::~QNozzleInfo()
@@ -11,149 +14,25 @@ QNozzleInfo::~QNozzleInfo()
 
 RetNozzle QNozzleInfo::Init(void)
 {
-	NozzleStore.clear();
+	OneNozzleStore oneNozzleBuff;
+	for (int i = NozzleStoreRoomA; i <= NozzleStoreRoomD; i++)
+	{
+		oneNozzleBuff.ISCALIBRATED = false;
+		oneNozzleBuff.ISCONTROLTEMP = false;
+		oneNozzleBuff.ISEXIST = false;
+		oneNozzleBuff.STOREROOM = static_cast<NozzleStoreRoom>(i);
+		oneNozzleBuff.TEMP = 0;
+		oneNozzleBuff.TYPE = NozzleTypeNull;
+		oneNozzleBuff.USING = false;
+		m_NozzleStore.insert(static_cast<NozzleStoreRoom>(i), oneNozzleBuff);
+	}
 	return SUCCESS;
 }
-
-RetNozzle QNozzleInfo::GetAllNozzleID(QList<int> listNozzleID)
-{
-	if (!NozzleStore.isEmpty())
-	{
-		listNozzleID.clear();
-		QMap <int, OneNozzle>::iterator it;
-		for (it = NozzleStore.begin(); it != NozzleStore.end(); ++it)
-		{
-			listNozzleID.append(it.key());
-		}
-		return SUCCESS;
-	}
-	return NONE;
-}
-
-RetNozzle QNozzleInfo::GetUsingNzoole(OneNozzle oneNozzle)
-{
-	if (!NozzleStore.isEmpty())
-	{
-		QMap <int, OneNozzle>::iterator it;
-		for (it = NozzleStore.begin(); it != NozzleStore.end(); ++it)
-		{
-			if (it.value().USING)
-			{
-				oneNozzle = it.value();
-				return SUCCESS;
-			}
-			return NONE;
-		}
-	}
-	return NONE;
-}
-
-RetNozzle QNozzleInfo::GetOneNozzleTemp(int id, float temp)
-{
-	if (!NozzleStore.isEmpty())
-	{
-		QMap <int, OneNozzle>::iterator it;
-		for (it = NozzleStore.begin(); it != NozzleStore.end(); ++it)
-		{
-			if (it.key() == id)
-			{
-				temp = it.value().TEMP;
-				return SUCCESS;
-			}
-			return FAIL;
-		}
-	}
-	return NONE;
-}
-RetNozzle QNozzleInfo::GetOneNozzleTemp(QString guid, float temp)
-{
-	if (!NozzleStore.isEmpty())
-	{
-		QMap <int, OneNozzle>::iterator it;
-		for (it = NozzleStore.begin(); it != NozzleStore.end(); ++it)
-		{
-			if (it.value().GUID == guid)
-			{
-				temp = it.value().TEMP;
-				return SUCCESS;
-			}
-			return FAIL;
-		}
-	}
-	return NONE;
-}
-
-bool QNozzleInfo::IsExist(NozzleStoreRoom storeroom)
-{
-	if (!NozzleStore.isEmpty())
-	{
-		QMap <int, OneNozzle>::iterator it;
-		for (it = NozzleStore.begin(); it != NozzleStore.end(); ++it)
-		{
-			if (it.value().STOREROOM == storeroom)
-			{
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-RetNozzle QNozzleInfo::AddOneNozzle(int id, OneNozzle nozzle)
-{
-	QMap <int, OneNozzle>::iterator it;
-	for (it = NozzleStore.begin(); it != NozzleStore.end(); ++it)
-	{
-		if (it.key() == id)
-		{
-			return FAIL;
-		}
-	}
-	NozzleStore.insert(id,nozzle);
-	return SUCCESS;
-}
-
-RetNozzle QNozzleInfo::RemoveOneNozzle(int id)
-{
-	if (!NozzleStore.isEmpty())
-	{
-		QMap <int, OneNozzle>::iterator it;
-		for (it = NozzleStore.begin(); it != NozzleStore.end(); ++it)
-		{
-			if (it.value().ID == id)
-			{
-				NozzleStore.erase(it);
-				return SUCCESS;
-			}
-			return NONE;
-		}
-	}
-	return FAIL;
-}
-
-RetNozzle QNozzleInfo::ChangeUsingNozzle(int id)
-{
-	if (!NozzleStore.isEmpty())
-	{
-		QMap <int, OneNozzle>::iterator it;
-		for (it = NozzleStore.begin(); it != NozzleStore.end(); ++it)
-		{
-			if (it.value().USING)
-			{
-				it.value().USING = false;
-			}
-			return NONE;
-		}
-		NozzleStore[id].USING = true;
-	}
-	return FAIL;
-}
-
 void QNozzleInfo::slotUpdataNozzleInfo(QByteArray info)
 {
+	nmutex.lock();
 
 	QVector<NozzleType> Info;
-
 	if (info.length() < PT_MAX_COUNT * 2 || info.isNull())
 	{//判断info接收到的数据完整性
 		return ;
@@ -163,7 +42,7 @@ void QNozzleInfo::slotUpdataNozzleInfo(QByteArray info)
 		Info.clear();
 		for (size_t nozzlstore = 0; nozzlstore <= PT_MAX_COUNT; nozzlstore++)		//nozzlstore从0至PT_MAX_COUNT，零表示喷头臂上挂载
 		{
-			int nozzlebuff = static_cast<int>(info[nozzlstore*2 + 1]) - 48;				//2*i+1分别取_0_0_0_0_0中的喷头信息
+			int nozzlebuff = info[nozzlstore*2 + 1] - '0' ;				//2*i+1分别取_0_0_0_0_0中的喷头信息
 			Info.push_back(static_cast<NozzleType>(nozzlebuff));				//往返回值中添加喷头类型信息
 		}
 	}
@@ -173,51 +52,52 @@ void QNozzleInfo::slotUpdataNozzleInfo(QByteArray info)
 		return;
 	}
 
-	for (size_t nozzlstore = 1; nozzlstore < Info.size(); nozzlstore++)
-	{
-		if (Info.at(nozzlstore) != NozzleNull)//1取_H_A_B_C_D中的喷头信息中H位
-		{//喷头臂已挂载喷头
-			if (!IsExist(static_cast<NozzleStoreRoom>(nozzlstore)))
+	for (size_t i = 1; i < Info.size(); i++)
+	{//依次更新喷头库信息
+		m_NozzleStore[static_cast<NozzleStoreRoom>(i)].ISEXIST = (Info[i] == NozzleTypeNull) ? false : true;
+
+		if (m_NozzleStore[static_cast<NozzleStoreRoom>(i)].ISEXIST)
+		{
+			m_NozzleStore[static_cast<NozzleStoreRoom>(i)].TYPE = Info[i];
+		}
+		else
+		{
+			m_NozzleStore[static_cast<NozzleStoreRoom>(i)].TYPE = NozzleTypeNull;
+		}
+
+		m_NozzleStore[static_cast<NozzleStoreRoom>(i)].STOREROOM = static_cast<NozzleStoreRoom>(i);
+
+		m_NozzleStore[static_cast<NozzleStoreRoom>(i)].USING = false;
+
+	}
+	if (Info[0] != NozzleTypeNull)
+	{//更新喷头臂上喷头信息,填充到第一个空位
+		QMap<NozzleStoreRoom, OneNozzleStore>::iterator it;
+		for (it = m_NozzleStore.begin(); it != m_NozzleStore.end(); ++it)
+		{
+			if (!it.value().ISEXIST)
 			{
-				OneNozzle oneNozzleBuff;
-				int id = NozzleStore.size() + 1;
-				oneNozzleBuff.ID = id;
-				oneNozzleBuff.STOREROOM = static_cast<NozzleStoreRoom>(nozzlstore);
-				oneNozzleBuff.TYPE = Info.at(nozzlstore);
-				oneNozzleBuff.USING = false;
-				AddOneNozzle(id,oneNozzleBuff);
+				m_NozzleStore[it.key()].ISEXIST = true;
+				m_NozzleStore[it.key()].TYPE = Info[0];
+				m_NozzleStore[it.key()].STOREROOM = it.key();
+				m_NozzleStore[it.key()].USING = true;
+				break;
 			}
 		}
 	}
-	NozzleStore.size();
-	//for (size_t nozzlstore = 0; nozzlstore <= PT_MAX_COUNT; nozzlstore++)	//nozzlstore从0至PT_MAX_COUNT，零表示喷头臂上挂载
-	//{
-	//	OneNozzle oneNozzleBuff;
+	//发送显示信号
+	emit signalNozzleStoreToWidget(m_NozzleStore);
 
-	//	switch (static_cast<int>(info[nozzlstore + 1]))		//i+1分别取_0_0_0_0_0中的喷头信息
-	//	{
-	//	case NozzleCold:
-	//		oneNozzleBuff.TYPE = NozzleCold;
-	//		break;
-	//	case NozzleHot:
-	//		oneNozzleBuff.TYPE = NozzleHot;
-	//		break;
-	//	case NozzleNormal:
-	//		oneNozzleBuff.TYPE = NozzleNormal;
-	//		break;
-	//	case NozzleNull:
-	//		oneNozzleBuff.TYPE = NozzleNull;
-	//		break;
-	//	default:
-	//		break;
-	//	}
-	//	if (oneNozzleBuff.STOREROOM == 0)
-	//	{//新挂载喷头，喷头对应刀座信息缺失
+	nmutex.unlock();
 
-	//	}
-	//	else
-	//	{
-	//		oneNozzleBuff.STOREROOM = nozzlstore;
-	//	}
-	//	//git test
+}
+
+void QNozzleInfo::slotUpdataNozzleTemp(QByteArray info)
+{
+	QList<QByteArray> baList = info.split('_');
+	
+	for (size_t i = 1; i < baList.size(); i++)
+	{
+		qDebug()<<baList[i].toFloat();
+	}
 }
