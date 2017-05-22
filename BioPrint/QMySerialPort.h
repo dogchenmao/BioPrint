@@ -16,11 +16,18 @@ private:
 	QByteArray m_SerialReadBuff;
 	QByteArray m_SerialInsBuff;
 
+	//flag bit
+	bool m_isGetTemp;
+	bool m_isGetPtStatus;
+	bool m_isGetPressure;
+	bool m_isGetFlowSpeed;
 protected:
 	void getOneIns(QByteArray buff);
+	void init(void);
 
 protected:
 	virtual void run();
+	virtual void timerEvent(QTimerEvent *event);
 public:
 	QMySerialPort(QObject *parent);
 	~QMySerialPort();
@@ -39,7 +46,7 @@ signals:
 	void signalUpdataChilleInfo(QByteArray info);
 public slots:
 	void serialRead();
-	void serialWrite(const char *ins);
+	bool serialWrite(const char *ins);
 
 
 };

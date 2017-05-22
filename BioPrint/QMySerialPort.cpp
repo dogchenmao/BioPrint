@@ -17,16 +17,15 @@ void QMySerialPort::showAllSerialPort()
 QMySerialPort::QMySerialPort(QObject *parent)
 : QThread(parent)
 {
-	m_bFindSerialPort = false;
-	m_SerialReadBuff.clear();
-	m_SerialInsBuff.clear();
-
+	init();
 
 	m_serial = new QSerialPort(this);
 	connect(m_serial, &QIODevice::readyRead, this, &QMySerialPort::serialRead);
 	serialSet(m_serial, "COM10", QSerialPort::Baud115200, QSerialPort::Data8, QSerialPort::NoParity, QSerialPort::OneStop);
 	//showAllSerialPort();
 	serialOpen();
+
+	startTimer(1000);
 	
 }
 
@@ -35,22 +34,45 @@ QMySerialPort::~QMySerialPort()
 
 }
 
+void QMySerialPort::init()
+{
+	m_bFindSerialPort = false;
+	m_SerialReadBuff.clear();
+	m_SerialInsBuff.clear();
+
+	m_isGetTemp = true;
+	m_isGetPtStatus = true;
+	m_isGetPressure = true;
+	m_isGetFlowSpeed = true;
+}
 void QMySerialPort::run()
 {
-	//ito = new InThreadObject;
-	//	// 注意下面的连接使用了QT::BlockingQueuedConnection选项
-	//	connect(ito,
-	//	&InThreadObject::request,
-	//	pMainWindow,
-	//	&MainWindow::response,
-	//	QT::BlockingQueuedConnection);
-	//	// 同步获取界面参数值
-	//	QVariant var;
-	//ito->request("param.level", var);
-	//// 这里会同步等待主线程执行response函数完
-	//int param = var.toInt();
+
 }
 
+void QMySerialPort::timerEvent(QTimerEvent *event)
+{
+	if (m_isGetTemp)
+	{
+		serialWrite("#GET_PT_STAUTS\r\n");
+	}
+
+	if (m_isGetPtStatus)
+	{
+		serialWrite("#TEMP_GET_ALL\r\n");
+	}
+
+	if (m_isGetPressure)
+	{
+		//serialWrite("#GET_GASS_STATE\r\n");
+	}
+
+	if (m_isGetFlowSpeed)
+	{
+		/*serialWrite("#SPEED_1\r\n");
+		serialWrite("#SPEED_2\r\n");*/
+	}
+}
 
 bool QMySerialPort::serialSet(QSerialPort *serialport,const QString serialname,	const qint32 baudrate,	QSerialPort::DataBits databit,	QSerialPort::Parity parity,	QSerialPort::StopBits stopbits)
 {
@@ -129,12 +151,17 @@ void QMySerialPort::serialRead()
 	mutex.unlock();
 }
 
-void QMySerialPort::serialWrite(const char *ins)
+bool QMySerialPort::serialWrite(const char *ins)
 {
 	if (m_serial->isWritable())
 	{
 		mutex.lock();
-		m_serial->write(ins);
+		qint64 returnBuff = m_serial->write(ins);
 		mutex.unlock();
+		if (returnBuff != -1)
+		{
+			return true;
+		}
 	}
+	return false;
 }
