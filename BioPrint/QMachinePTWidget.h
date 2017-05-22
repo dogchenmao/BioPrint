@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QMap>
 #include "GlobleDefine.h"
+#include "QNozzleInfo.h"
 
 class QMachinePTWidget : public QWidget
 {
@@ -17,6 +18,9 @@ public:
 protected:
 	virtual void resizeEvent(QResizeEvent *event);
 	virtual void timerEvent(QTimerEvent *event);
+protected slots:
+	void updataNozzle(QMap<NozzleStoreRoom, OneNozzleStore>);
+
 private:
 	Ui::QMachinePTWidget ui;
 	uint m_NozzleTotal;

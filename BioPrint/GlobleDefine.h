@@ -41,11 +41,11 @@ enum NozzleStoreRoom
 // 喷头类型
 enum NozzleType
 {
-	NozzleCold = 3,
-	NozzleHot = 6,
-	NozzleNormal = 9,
-	NozzleUV = 5,
-	NozzleNull = 0,
+	NozzleTypeCold = 3,
+	NozzleTypeHot = 6,
+	NozzleTypeNormal = 9,
+	NozzleTypeUV = 5,
+	NozzleTypeNull = 0,
 };
 
 //喷头类返回值
