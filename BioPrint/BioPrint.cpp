@@ -13,6 +13,8 @@ BioPrint::BioPrint(QWidget *parent)
 	m_QNozzleInfo = new QNozzleInfo(this);
 	QObject::connect(m_QMySerialPort, SIGNAL(signalUpdataNozzleInfo(QByteArray)), m_QNozzleInfo, SLOT(slotUpdataNozzleInfo(QByteArray)));
 
+
+
 	//InitWidget();
 	m_QMachinePTWidget = new QMachinePTWidget(this);
 	ui.LeftLayout_D_U->addWidget(m_QMachinePTWidget);
@@ -35,6 +37,7 @@ BioPrint::BioPrint(QWidget *parent)
 	myApp.Load();
 
 	m_QMySerialPort->serialWrite(IniFile.toLatin1().data());
+
 }
 BioPrint::~BioPrint()
 {

@@ -80,7 +80,7 @@ static const uint qt_meta_data_QMySerialPort[] = {
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 9,   10,
+    QMetaType::Bool, 0x80000000 | 9,   10,
 
        0        // eod
 };
@@ -95,7 +95,8 @@ void QMySerialPort::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 1: _t->signalUpdataNozzleTemp((*reinterpret_cast< QByteArray(*)>(_a[1]))); break;
         case 2: _t->signalUpdataChilleInfo((*reinterpret_cast< QByteArray(*)>(_a[1]))); break;
         case 3: _t->serialRead(); break;
-        case 4: _t->serialWrite((*reinterpret_cast< const char*(*)>(_a[1]))); break;
+        case 4: { bool _r = _t->serialWrite((*reinterpret_cast< const char*(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
