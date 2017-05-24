@@ -17,16 +17,11 @@ public:
 	QMachineWidget(QWidget *parent = Q_NULLPTR);
 	~QMachineWidget();
 private:
-	QLabel* m_labelCurrentPt;
-	QLabel* m_labelChangePt;
-	QLabel* m_labelMoveModel;
-	QRadioButton* m_radioMoveContinue;
-	QRadioButton* m_radioMoveFix;
-	QLabel* m_labelMoveDistance;
-	QRadioButton* m_radioMoveOneMM;
-	QRadioButton* m_radioMoveDeciMM;
-	QRadioButton* m_radioMoveCustomMM;
-	QLabel* m_labelShowMM;
+	bool	m_isMoveContinu;
+	float	m_MoveLength;
+	float	m_MoveSpeedXY;
+	float	m_MoveSpeedZ;
+	float	m_Pressure;
 
 signals:
 

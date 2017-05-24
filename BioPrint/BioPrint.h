@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QLabel>
 
+#include "MotionControl.h"
 #include "QModelView.h"
 #include "QMachineWidget.h"
 #include "QMachinePTWidget.h"
@@ -50,4 +51,7 @@ private:
 	QPushButton *PT4;
 	//喷头设置
 	bool flag;
+
+	//运动控制器
+	MotionControl *m_MotionControl;
 };

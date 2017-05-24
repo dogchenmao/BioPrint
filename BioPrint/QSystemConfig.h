@@ -164,3 +164,4 @@ public:
 	void Save();
 };
 
+extern QSystemConfig m_QSystemConfig;

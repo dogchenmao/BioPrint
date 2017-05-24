@@ -19,7 +19,7 @@
   <property name="windowTitle">
    <string>QMachineWidget</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="10,2,4">
    <property name="leftMargin">
     <number>9</number>
    </property>
@@ -35,7 +35,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>GroupBox</string>
+      <string>轴移动</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,1,2">
       <property name="spacing">
@@ -46,7 +46,7 @@
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>TextLabel</string>
+           <string>移动方式:</string>
           </property>
          </widget>
         </item>
@@ -59,8 +59,14 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>RadioButton</string>
+           <string>连续</string>
           </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">buttonGroup</string>
+          </attribute>
          </widget>
         </item>
         <item>
@@ -72,12 +78,28 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>RadioButton</string>
+           <string>固定</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">buttonGroup</string>
+          </attribute>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="inputMask">
+           <string>1</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="cursorMoveStyle">
+           <enum>Qt::LogicalMoveStyle</enum>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_2">
@@ -105,12 +127,45 @@
         <item>
          <widget class="QLabel" name="label_3">
           <property name="text">
-           <string>TextLabel</string>
+           <string>速度(mm/min):  X/Y轴</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox"/>
+         <widget class="QSpinBox" name="spinBox">
+          <property name="maximum">
+           <number>2000</number>
+          </property>
+          <property name="singleStep">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>1200</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Z轴</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spinBox_2">
+          <property name="maximum">
+           <number>2000</number>
+          </property>
+          <property name="singleStep">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>1000</number>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -131,8 +186,8 @@
         <property name="spacing">
          <number>9</number>
         </property>
-        <item row="0" column="1">
-         <widget class="QPushButton" name="pushButton_4">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="pushButtonXAdd">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -140,12 +195,12 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>X+</string>
           </property>
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="pushButtonYSub">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -153,12 +208,12 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Y-</string>
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton">
+        <item row="0" column="1">
+         <widget class="QPushButton" name="pushButtonYAdd">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -166,25 +221,12 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>PushButton</string>
+           <string>Y+</string>
           </property>
          </widget>
         </item>
         <item row="0" column="2">
-         <widget class="QPushButton" name="pushButton_5">
+         <widget class="QPushButton" name="pushButtonZAdd">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -192,12 +234,25 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Z+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButtonMoveXSub">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>X-</string>
           </property>
          </widget>
         </item>
         <item row="1" column="2">
-         <widget class="QPushButton" name="pushButton_6">
+         <widget class="QPushButton" name="pushButtonZSub">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -205,7 +260,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Z-</string>
           </property>
          </widget>
         </item>
@@ -215,20 +270,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="QGroupBox" name="groupBox_3">
      <property name="title">
-      <string>GroupBox</string>
+      <string>压力值</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,3">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="3,1,1">
         <item>
          <widget class="QSlider" name="horizontalSlider">
           <property name="orientation">
@@ -241,10 +289,29 @@
           <property name="lineWidth">
            <number>0</number>
           </property>
+          <property name="smallDecimalPoint">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>mmPa</string>
+          </property>
          </widget>
         </item>
        </layout>
       </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>其他动作</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3" stretch="3">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
         <item>
@@ -256,7 +323,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>自动复位</string>
           </property>
          </widget>
         </item>
@@ -269,7 +336,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>加载喷头</string>
           </property>
          </widget>
         </item>
@@ -282,16 +349,13 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>切换喷头</string>
           </property>
          </widget>
         </item>
        </layout>
       </item>
      </layout>
-     <zorder>groupBox</zorder>
-     <zorder>horizontalLayoutWidget_2</zorder>
-     <zorder>horizontalLayoutWidget_3</zorder>
     </widget>
    </item>
   </layout>
@@ -299,4 +363,7 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>

@@ -29,15 +29,8 @@ BioPrint::BioPrint(QWidget *parent)
 	ui.RightLayout_L_U->addWidget(m_QModelView);
 	m_QModelView->show();
 
-	QSystemConfig myApp;
-	QDir aa;
-	QString IniFile;
-	IniFile = aa.currentPath() + "/Inis/SystemSetting.ini";
-	aa.currentPath();
-	myApp.SetFileName(&IniFile);
-	myApp.Load();
+	m_MotionControl = new MotionControl(this);
 
-	m_QMySerialPort->serialWrite(IniFile.toLatin1().data());
 
 }
 BioPrint::~BioPrint()

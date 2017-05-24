@@ -131,3 +131,4 @@ void QSystemConfig::Load()
 	//m_isFlow_Open = GetValue(configIniRead, "MACHINE", "isFlow_Open", TRUE);
 
 }
+QSystemConfig m_QSystemConfig;
