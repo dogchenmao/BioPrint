@@ -60,6 +60,15 @@
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
+    <Filter Include="SelfWidget\QProjectWidget">
+      <UniqueIdentifier>{fa9096c2-c161-4f11-9901-df3dc0a47de3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SelfWidget\QMachinePTWidget">
+      <UniqueIdentifier>{d34c8138-05e0-49b8-b15b-9d1e581a7b31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SelfWidget\QMachineWidget">
+      <UniqueIdentifier>{8e6187de-7272-48a8-bd97-d431c60ec1cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -140,17 +149,11 @@
     <ClCompile Include="GeneratedFiles\Release\moc_QMachineWidget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="QMachineWidget.cpp">
-      <Filter>SelfWidget</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_QMachinePTWidget.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_QMachinePTWidget.cpp">
       <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="QMachinePTWidget.cpp">
-      <Filter>SelfWidget</Filter>
     </ClCompile>
     <ClCompile Include="PrinterMachine.cpp">
       <Filter>Source Files</Filter>
@@ -184,6 +187,66 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_MotionControl.cpp">
       <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QSelfPushButton.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QSelfPushButton.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QSelfToolButton.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QSelfToolButton.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QSelfPushButton.cpp">
+      <Filter>SelfWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="QSelfToolButton.cpp">
+      <Filter>SelfWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QTitleWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QTitleWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QTitleWidget.cpp">
+      <Filter>SelfWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QMainMenu.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QMainMenu.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QMainMenu.cpp">
+      <Filter>SelfWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QSystemTray.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QSystemTray.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QSystemTray.cpp">
+      <Filter>SelfWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QProjectWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QProjectWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="QProjectWidget.cpp">
+      <Filter>SelfWidget\QProjectWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="QMachinePTWidget.cpp">
+      <Filter>SelfWidget\QMachinePTWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="QMachineWidget.cpp">
+      <Filter>SelfWidget\QMachineWidget</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,18 +301,6 @@
     <CustomBuild Include="TCamera.h">
       <Filter>ModelView</Filter>
     </CustomBuild>
-    <CustomBuild Include="QMachineWidget.h">
-      <Filter>SelfWidget</Filter>
-    </CustomBuild>
-    <CustomBuild Include="QMachinePTWidget.ui">
-      <Filter>SelfWidget</Filter>
-    </CustomBuild>
-    <CustomBuild Include="QMachineWidget.ui">
-      <Filter>SelfWidget</Filter>
-    </CustomBuild>
-    <CustomBuild Include="QMachinePTWidget.h">
-      <Filter>SelfWidget</Filter>
-    </CustomBuild>
     <CustomBuild Include="BioPrint.h">
       <Filter>Source Files</Filter>
     </CustomBuild>
@@ -271,6 +322,39 @@
     <CustomBuild Include="MotionControl.h">
       <Filter>Communication</Filter>
     </CustomBuild>
+    <CustomBuild Include="QSelfPushButton.h">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QSelfToolButton.h">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QTitleWidget.h">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMainMenu.h">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QSystemTray.h">
+      <Filter>SelfWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QProjectWidget.h">
+      <Filter>SelfWidget\QProjectWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QProjectWidget.ui">
+      <Filter>SelfWidget\QProjectWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMachinePTWidget.ui">
+      <Filter>SelfWidget\QMachinePTWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMachinePTWidget.h">
+      <Filter>SelfWidget\QMachinePTWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMachineWidget.h">
+      <Filter>SelfWidget\QMachineWidget</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QMachineWidget.ui">
+      <Filter>SelfWidget\QMachineWidget</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_QMachineWidget.h">
@@ -287,6 +371,9 @@
     </ClInclude>
     <ClInclude Include="QSystemConfig.h">
       <Filter>Ini</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_QProjectWidget.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

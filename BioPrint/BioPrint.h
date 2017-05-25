@@ -12,9 +12,10 @@
 #include "QMachinePTWidget.h"
 #include "QMySerialPort.h"
 #include "QNozzleInfo.h"
-
-
+#include "QTitleWidget.h"
+#include "QMainMenu.h"
 #include "QSystemConfig.h"
+#include "QSystemTray.h"
 
 class BioPrint : public QMainWindow
 {
@@ -26,17 +27,24 @@ public:
 protected slots:
 	void setModelWidget(void);
 	void setProjectWidget(void);
-	void myslot(void);
+	void showMainMenu(void);
+	void showMax(void);
+protected:
+	void paintEvent(QPaintEvent *);
+	void timerEvent(QTimerEvent *);
 private:
 	Ui::BioPrintClass ui;
-
 	void InitWidget(void);
+	void ConnectSignalSlot(void);
 private:
 	QMachineWidget *m_QMachineWidget;
 	QMachinePTWidget *m_QMachinePTWidget;
 	QModelView *m_QModelView;
 	QMySerialPort *m_QMySerialPort;
 	QNozzleInfo *m_QNozzleInfo;
+	QTitleWidget *m_QTitleWidget;
+	QMainMenu *m_QMainMenu;
+	QSystemTray * m_QSystemTray;
 	//连接界面
 	QPushButton *m_ConnectMachine;
 	QPushButton *m_ConnectSetup;
@@ -54,4 +62,6 @@ private:
 
 	//运动控制器
 	MotionControl *m_MotionControl;
+
+	QRect location;
 };

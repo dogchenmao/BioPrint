@@ -14,9 +14,9 @@ MotionControl::~MotionControl()
 
 void MotionControl::Init()
 {
-	static MC_COM_INIT_DATA *initData = nullptr ;
+	static MC_COM_INIT_DATA *initData = {0};
 
-	initData->InitMaxXAxis = m_QSystemConfig.m_fBuildSize_X;
+	/*initData->InitMaxXAxis = m_QSystemConfig.m_fBuildSize_X;
 	initData->InitMaxYAxis = m_QSystemConfig.m_fBuildSize_Y;
 	initData->InitMaxZAxis = m_QSystemConfig.m_fBuildSize_Z;
 	initData->D_ValueSensorPlatform = m_QSystemConfig.m_fBuildSize_Z_Diff;
@@ -32,7 +32,7 @@ void MotionControl::Init()
 	initData->ClearHighHeadYAxis = m_QSystemConfig.m_CalibrateCleanKnifeHigh_Pos.Y;
 	initData->ClearLowHeadXAxis = m_QSystemConfig.m_CalibrateCleanKnifeLow_Pos.X;
 	initData->ClearLowHeadYAxis = m_QSystemConfig.m_CalibrateCleanKnifeLow_Pos.Y;
-	initData->Z_HeadHeight = m_QSystemConfig.m_fBuildSize_Z_Knife;
+	initData->Z_HeadHeight = m_QSystemConfig.m_fBuildSize_Z_Knife;*/
 	//initData.Z_HeadOffsetX = m_QSystemConfig.m_fHeadOffsetX;
 	//initData.Adj_PlatformXAxisOffset = m_QSystemConfig.m_fPlatformXAxisOffset;
 	//initData.AdjZ_SensorHeightXAxisOffset = m_QSystemConfig.m_fZSensorHeightXAxisOffset;
@@ -61,8 +61,8 @@ void MotionControl::Init()
 	//	initData.HeadSpecData[i].LocateShelfX = theApp.m_NozzleInfo.GetNozzleInfo(i)->LocateShelfX;
 	//	initData.HeadSpecData[i].CmpHead3OffsetX = theApp.m_NozzleInfo.GetNozzleInfo(i)->CmpHead3OffsetX;
 	//}
-	initData = nullptr;
-	MC_CoreInit(initData);
+	//initData = nullptr;
+	//MC_CoreInit(initData);
 }
 
 void MotionControl::run()

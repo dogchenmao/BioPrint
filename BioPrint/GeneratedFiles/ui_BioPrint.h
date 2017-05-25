@@ -28,13 +28,13 @@ class Ui_BioPrintClass
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout;
+    QHBoxLayout *TopLayout;
+    QSpacerItem *verticalSpacer_4;
     QVBoxLayout *LeftLayout;
     QVBoxLayout *LeftLayout_U;
     QVBoxLayout *LeftLayout_D;
     QHBoxLayout *LeftLayout_D_U;
     QHBoxLayout *LeftLayout_D_D;
-    QHBoxLayout *TopLayout;
-    QSpacerItem *verticalSpacer_4;
     QHBoxLayout *RightLayout;
     QVBoxLayout *RightLayout_L;
     QHBoxLayout *RightLayout_L_U;
@@ -43,12 +43,14 @@ public:
     QVBoxLayout *RightLayout_R;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *BottomLayout;
+    QHBoxLayout *TitleLayout;
 
     void setupUi(QMainWindow *BioPrintClass)
     {
         if (BioPrintClass->objectName().isEmpty())
             BioPrintClass->setObjectName(QStringLiteral("BioPrintClass"));
-        BioPrintClass->resize(1282, 828);
+        BioPrintClass->resize(1297, 828);
+        BioPrintClass->setStyleSheet(QStringLiteral(""));
         BioPrintClass->setToolButtonStyle(Qt::ToolButtonIconOnly);
         BioPrintClass->setDockOptions(QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks);
         centralWidget = new QWidget(BioPrintClass);
@@ -63,6 +65,17 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(2, 0, 2, 2);
+        TopLayout = new QHBoxLayout();
+        TopLayout->setSpacing(6);
+        TopLayout->setObjectName(QStringLiteral("TopLayout"));
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        TopLayout->addItem(verticalSpacer_4);
+
+
+        gridLayout->addLayout(TopLayout, 1, 0, 1, 3);
+
         LeftLayout = new QVBoxLayout();
         LeftLayout->setSpacing(6);
         LeftLayout->setObjectName(QStringLiteral("LeftLayout"));
@@ -96,17 +109,7 @@ public:
         LeftLayout->setStretch(0, 3);
         LeftLayout->setStretch(1, 2);
 
-        gridLayout->addLayout(LeftLayout, 1, 0, 1, 1);
-
-        TopLayout = new QHBoxLayout();
-        TopLayout->setSpacing(6);
-        TopLayout->setObjectName(QStringLiteral("TopLayout"));
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        TopLayout->addItem(verticalSpacer_4);
-
-
-        gridLayout->addLayout(TopLayout, 0, 0, 1, 3);
+        gridLayout->addLayout(LeftLayout, 2, 0, 1, 1);
 
         RightLayout = new QHBoxLayout();
         RightLayout->setSpacing(6);
@@ -148,17 +151,24 @@ public:
         RightLayout->setStretch(0, 2);
         RightLayout->setStretch(1, 1);
 
-        gridLayout->addLayout(RightLayout, 1, 1, 1, 2);
+        gridLayout->addLayout(RightLayout, 2, 1, 1, 2);
 
         BottomLayout = new QHBoxLayout();
         BottomLayout->setSpacing(6);
         BottomLayout->setObjectName(QStringLiteral("BottomLayout"));
 
-        gridLayout->addLayout(BottomLayout, 2, 0, 1, 3);
+        gridLayout->addLayout(BottomLayout, 3, 0, 1, 3);
 
-        gridLayout->setRowStretch(0, 3);
-        gridLayout->setRowStretch(1, 25);
-        gridLayout->setRowStretch(2, 1);
+        TitleLayout = new QHBoxLayout();
+        TitleLayout->setSpacing(6);
+        TitleLayout->setObjectName(QStringLiteral("TitleLayout"));
+
+        gridLayout->addLayout(TitleLayout, 0, 0, 1, 3);
+
+        gridLayout->setRowStretch(0, 1);
+        gridLayout->setRowStretch(1, 3);
+        gridLayout->setRowStretch(2, 25);
+        gridLayout->setRowStretch(3, 1);
         gridLayout->setColumnStretch(0, 1);
         gridLayout->setColumnStretch(1, 3);
         BioPrintClass->setCentralWidget(centralWidget);

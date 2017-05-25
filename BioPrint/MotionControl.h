@@ -4,6 +4,7 @@
 #include "mc_config.h"
 #include "mc_com_udcs.h"
 #include "mc_gstr.h"
+#include <QVector>
 
 class MotionControl : public QThread
 {

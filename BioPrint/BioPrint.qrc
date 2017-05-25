@@ -1,5 +1,13 @@
 <RCC>
   <qresource prefix="/BioPrint">
+    <file>res/logo.ico</file>
+    <file>res/sysButton/arrow_down.png</file>
+    <file>res/sysButton/close.png</file>
+    <file>res/sysButton/close_button.png</file>
+    <file>res/sysButton/main_menu.png</file>
+    <file>res/sysButton/max_button.png</file>
+    <file>res/sysButton/min_button.png</file>
+    <file>res/sysButton/skin_button.png</file>
     <file>res/HIGH1.png</file>
     <file>res/LOW1.png</file>
     <file>res/PTZ_1.png</file>
