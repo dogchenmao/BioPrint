@@ -26,7 +26,7 @@ class QNozzleInfo : public QThread
 public:
 	QNozzleInfo(QObject *parent);
 	~QNozzleInfo();
-private:
+public:
 	QMap<NozzleStoreRoom,OneNozzleStore> m_NozzleStore;
 public slots:
 	void slotUpdataNozzleInfo(QByteArray info);

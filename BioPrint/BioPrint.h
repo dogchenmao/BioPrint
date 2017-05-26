@@ -36,7 +36,7 @@ private:
 	Ui::BioPrintClass ui;
 	void InitWidget(void);
 	void ConnectSignalSlot(void);
-private:
+public:
 	QMachineWidget *m_QMachineWidget;
 	QMachinePTWidget *m_QMachinePTWidget;
 	QModelView *m_QModelView;

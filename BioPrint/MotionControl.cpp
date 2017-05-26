@@ -1,6 +1,13 @@
 #include "MotionControl.h"
 #include "QSystemConfig.h"
 #include <QDebug>
+#include "BioPrint.h"
+#include <QMutex>
+
+QMutex m_MotionControlMutex;
+
+BioPrint *m_BioPrint;
+
 MotionControl::MotionControl(QObject *parent)
 : QThread(parent)
 {
@@ -63,9 +70,52 @@ void MotionControl::Init()
 	//}
 	//initData = nullptr;
 	//MC_CoreInit(initData);
+
+	m_BioPrint = (BioPrint *)this->parent();
 }
 
 void MotionControl::run()
 {
+	while (this->isRunning())
+	{
+		if (MC_CoreExec() == MC_TRUE)
+		{
+			m_HardFault = true;
+			break;
+		}
+		else
+		{
+			m_HardFault = false;
+		}
 
+		if (m_PackageRunFlag)
+		{
+			if (!m_PackageArray.isEmpty())
+			{
+				m_MotionControlMutex.lock();
+				QString qstrGCodeLine = m_PackageArray.first();
+				m_MotionControlMutex.unlock();
+
+				std::string strGCodeLine = qstrGCodeLine.toStdString();
+				const char* chGCodeLine = strGCodeLine.c_str();
+
+				if (MC_ComUdcsGetFlag()->OnMC_CoreExec)
+				{
+
+				}
+				else
+				{
+					if (MC_GStrCodeExec(chGCodeLine) == MC_FALSE)
+					{
+						continue;
+					}
+				}
+
+				m_MotionControlMutex.lock();
+				QString qstrGCodeLine = m_PackageArray.first();
+				m_MotionControlMutex.unlock();
+
+			}
+		}
+	}
 }

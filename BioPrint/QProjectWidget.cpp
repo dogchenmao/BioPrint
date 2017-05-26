@@ -8,4 +8,5 @@ QProjectWidget::QProjectWidget(QWidget *parent)
 
 QProjectWidget::~QProjectWidget()
 {
+
 }

@@ -10,10 +10,10 @@ class MotionControl : public QThread
 {
 	Q_OBJECT
 private:
-	volatile bool		m_KillThread;                   //!< 是否结束线程
-	volatile bool		m_isThreadKilled;               //!< 线程是否已结束
+	volatile bool		m_ThreadRun;		             //!< 是否开始线程
 	volatile bool		m_ConnectState;					//!< 运动控制器连接状态
-	volatile bool		m_bPackageRunFlag;              //!< 是否有数据需要发送标志
+	volatile bool		m_HardFault;					//!< 是否有错误
+	volatile bool		m_PackageRunFlag;              //!< 是否有数据需要发送标志
 	QVector<QString>	m_PackageArray;                 //!< 待发送指令列表
 
 public:
