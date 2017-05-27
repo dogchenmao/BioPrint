@@ -22,6 +22,7 @@ public:
 	void Close();
 	void ClearSendPackage(void);
 	void SendPackage(QVector<QString>& PackageArray);
+	void SendPackage(QString PackageArray);
 	void SendImmediatePackage(QVector<QString>& ImmediatePackageArray);
 private:
 	void Init();

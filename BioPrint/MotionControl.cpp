@@ -73,6 +73,19 @@ void MotionControl::Init()
 
 	m_BioPrint = (BioPrint *)this->parent();
 }
+void MotionControl::SendPackage(QVector<QString>& PackageArray)
+{
+	m_MotionControlMutex.lock();
+	m_PackageArray.append(PackageArray);
+	m_MotionControlMutex.unlock();
+}
+
+void MotionControl::SendPackage(QString PackageArray)
+{
+	m_MotionControlMutex.lock();
+	m_PackageArray.append(PackageArray);
+	m_MotionControlMutex.unlock();
+}
 
 void MotionControl::run()
 {
@@ -112,8 +125,9 @@ void MotionControl::run()
 				}
 
 				m_MotionControlMutex.lock();
-				QString qstrGCodeLine = m_PackageArray.first();
+				m_PackageArray.removeFirst();
 				m_MotionControlMutex.unlock();
+				qstrGCodeLine.clear();
 
 			}
 		}

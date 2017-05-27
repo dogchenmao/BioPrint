@@ -54,7 +54,8 @@ void BioPrint::InitWidget()
 	////窗口类-主菜单
 	m_QMainMenu = new QMainMenu();
 	m_QSystemTray = new QSystemTray(this);
-
+	QString	test = "G01 X100 Y100 Z100 F10";
+	m_MotionControl->SendPackage(test);
 }
 
 void BioPrint::ConnectSignalSlot()
